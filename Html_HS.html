@@ -57,7 +57,11 @@
                var lat = position.coords.latitude;
                var lon = position.coords.longitude;
                x.innerHTML="Latitude: " + position.coords.latitude + "<br>Longtiude: " +position.coords.longitude;
-               window.open("https://www.google.com/maps/search/?api=1&query="+lat+","+lon);
+               openInGoogleMaps(lat,lon);
+               
+           }
+           function openInGoogleMaps(lat, lon){
+                window.open("https://www.google.com/maps/search/?api=1&query="+lat+","+lon);
            }
         </script>
         </section>
