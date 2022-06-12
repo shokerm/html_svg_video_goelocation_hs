@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hw_Solution</title>
+</head>
+<body >
+    <section>
+        <h1>Hw_Solution</h1>
+        <ul>
+            <li>SVG</li>
+            <li>html 5 : video,audio, jeolocation</li>
+        </ul>
+        <!--Star of David with SVG-->
+
+        <section>
+            <h1>SVG</h1>
+            <svg withd="500" height="500">
+                <polygon points="170,90 90,250 250,250" style="fill:none;stroke: rgb(67, 12, 233); stroke-width:5;"></polygon>
+                <polygon points="250,130 170,300 100,130" style="fill:none;stroke: rgb(21, 105, 214); stroke-width:5;"></polygon>
+            </svg>
+        </section>
+        <!--Video autoplay and audio-->
+        <section>
+            <h1>Video</h1>
+            <video autoplay width="320" height="240" >
+                <source onclick="https://filesamples.com/samples/audio/ogg/Symphony%20No.6%20(1st%20movement).ogg" src="https://file-examples.com/storage/fece7372cf62a47bc9626b9/2017/04/file_example_MP4_1280_10MG.mp4" type="video/mp4">
+            </video>
+            <br>
+            <audio controls>
+                <source src="https://file-examples.com/storage/fece7372cf62a47bc9626b9/2017/11/file_example_OOG_2MG.ogg" type="audio/mpeg">
+                </audio>
+        </section>
+
+        <!--Geolocation with google maps-->
+        <section>
+            <h1>geolocation</h1>
+            <button onclick="getLocation()">See your location at google map</button>
+            <p id="demo"></p>
+        </section>
+
+
+        <!--Functions-->
+        <section>
+        <script>
+           var x = document.getElementById("demo");
+           function getLocation(){
+               if(navigator.geolocation){
+                   navigator.geolocation.getCurrentPosition(showPosition);
+               } else {
+                   x.innerHTML ="Thre is not geo location to take..."
+               }
+           }
+               function showPosition(position){
+               var lat = position.coords.latitude;
+               var lon = position.coords.longitude;
+               x.innerHTML="Latitude: " + position.coords.latitude + "<br>Longtiude: " +position.coords.longitude;
+               window.open("https://www.google.com/maps/search/?api=1&query="+lat+","+lon);
+           }
+        </script>
+        </section>
+
+</body>
+</html>
